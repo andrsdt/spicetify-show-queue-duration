@@ -1,0 +1,9 @@
+{
+	"name": "Spicetify-Show-Queue-Duration",
+	"description": "Spicetify extension to show the total duration of the current track queue.",
+	"preview": "screenshot.png",
+	"main": "showQueueDuration.js",
+	"readme": "README.md",
+	"authors": [{ "name": "andrsdt", "url": "https://github.com/andrsdt" }],
+	"tags": ["queue", "duration", "queue-duration"]
+}
