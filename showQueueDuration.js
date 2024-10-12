@@ -8,18 +8,19 @@
 // from one version to another, so I'm adding them as they
 // are added to Spotify. This is to ensure compatibility
 // with older Spotify versions
-const QUEUE_H1_CLASSES = [
-	".main-type-canon",
-	".DG9CsoFIptJhAneKoo_F",
-	".queue-queuePage-header",
-	".mP6tR7IgjiamGqpBW5ai"
+const QUEUE_HEADER_SELECTORS = [
+  ".main-type-canon",
+  ".DG9CsoFIptJhAneKoo_F",
+  ".queue-queuePage-header",
+  ".mP6tR7IgjiamGqpBW5ai",
+  ".vLZJk3f3zoMmc3u9QMrc > h1",
 ].join(", ");
 
 (function ShowQueueDuration() {
-	const queueHeader = document.querySelector(QUEUE_H1_CLASSES);
+	const queueHeader = document.querySelector(QUEUE_HEADER_SELECTORS);
 
 	// Only run on the queue page
-	if (!queueHeader) {
+	if (Spicetify.Platform?.History?.location?.pathname !== "/queue" || !queueHeader) {
 		setTimeout(ShowQueueDuration, 1000);
 		return;
 	}
